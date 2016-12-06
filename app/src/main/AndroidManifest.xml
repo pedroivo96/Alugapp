@@ -11,9 +11,13 @@
         <activity android:name=".fronteira.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fronteira.TelaInserirImovel" />
+        <activity android:name=".fronteira.TelaPesquisarImovel" />
+        <activity android:name=".fronteira.TelaListarImoveis"></activity>
     </application>
 
 </manifest>
