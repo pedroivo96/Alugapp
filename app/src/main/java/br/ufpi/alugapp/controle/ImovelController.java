@@ -32,4 +32,8 @@ public class ImovelController {
 
         return i;
     }
+
+    public boolean inserirImovel(Imovel i){
+
+    }
 }
