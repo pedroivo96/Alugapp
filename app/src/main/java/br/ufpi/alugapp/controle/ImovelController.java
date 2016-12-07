@@ -19,15 +19,12 @@ public class ImovelController {
         this.repositorio = new ImovelRepository();
     }
 
-    //Existem duas buscas : Pelo id e atraves de uma String
-
     public Imovel buscarImovel(int id){
 
         return null;
     }
 
-    public ArrayList<Imovel> buscarImovel(String descricao){
-
+    public ArrayList<Imovel> pesquisarImoveis(String descricao){
 
         return null;
     }
