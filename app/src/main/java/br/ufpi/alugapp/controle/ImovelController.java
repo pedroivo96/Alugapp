@@ -19,28 +19,17 @@ public class ImovelController {
         this.repositorio = new ImovelRepository();
     }
 
-
-    //Implementar métodos listarImoveis , buscarImovel , InserirImovel
-    //Lista de imóveis chama listar imoveis do Repositorio e retorna uma lista
     //Existem duas buscas : Pelo id e atraves de uma String
-    //Inserir imovel recebe um objeto Imovel e usa o metodo inserirImovel do repositorio
-
-    public List<Imovel> listarImoveis(){
-        ArrayList<Imovel> imoveis = new ArrayList<Imovel>();
-
-        return imoveis;
-    }
 
     public Imovel buscarImovel(int id){
-        Imovel i = new Imovel();
 
-        return i;
+        return null;
     }
 
-    public Imovel buscarImovel(String descricao){
-        Imovel i = new Imovel();
+    public ArrayList<Imovel> buscarImovel(String descricao){
 
-        return i;
+
+        return null;
     }
 
     public boolean inserirImovel(Imovel i){
