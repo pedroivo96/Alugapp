@@ -5,4 +5,12 @@ package br.ufpi.alugapp.entidades;
  */
 
 public class LocalMapa {
+
+    double latitude;
+    double longitude;
+
+    public LocalMapa(){
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
