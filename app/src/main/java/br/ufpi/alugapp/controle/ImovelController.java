@@ -20,7 +20,6 @@ public class ImovelController {
     }
 
     public ArrayList<Imovel> pesquisarImoveis(String pesquisa){
-
         return repositorio.pesquisarImoveis(pesquisa);
     }
 
