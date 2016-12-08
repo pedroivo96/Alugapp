@@ -19,7 +19,5 @@ public class TelaDetalhesImovel extends AppCompatActivity {
         setContentView(R.layout.activity_tela_detalhes_imovel);
 
         this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
-
-        Toast.makeText(this, imv.endereco, Toast.LENGTH_SHORT).show();
     }
 }
