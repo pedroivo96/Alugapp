@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição:"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/tDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endereço:"
+                android:textColor="#000"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tEndereco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000" />
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Corretor:"
+                android:textColor="#000"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tCorretor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,10 +1,14 @@
 package br.ufpi.alugapp.entidades;
 
+import java.io.Serializable;
+
 /**
  * Created by wellyson on 05/12/16.
  */
 
-public class Imovel {
+public class Imovel implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     public String descricao;
     public String endereco;

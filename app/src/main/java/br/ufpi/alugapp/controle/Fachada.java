@@ -6,7 +6,7 @@ package br.ufpi.alugapp.controle;
 
 public class Fachada {
 
-    ImovelController controladorImoveis;
+    public ImovelController controladorImoveis;
 
     public Fachada(){
         this.controladorImoveis = new ImovelController();
