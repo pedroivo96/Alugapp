@@ -6,8 +6,8 @@ package br.ufpi.alugapp.entidades;
 
 public class LocalMapa {
 
-    double latitude;
-    double longitude;
+    public double latitude;
+    public double longitude;
 
     public LocalMapa(){
         this.latitude = latitude;

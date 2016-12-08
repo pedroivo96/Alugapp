@@ -6,14 +6,16 @@ package br.ufpi.alugapp.entidades;
 
 public class Imovel {
 
-    String descricao;
-    String endereco;
-    int idImovel;
-    int idCorretor;
-    boolean visible;
-    LocalMapa local;
+    public String descricao;
+    public String endereco;
+    public double idImovel;
+    public double idCorretor;
+    public boolean visible;
+    public LocalMapa local;
 
-    public Imovel(int idImovel, String descricao, String endereco, LocalMapa local, int idCorretor){
+    public Imovel(){}
+
+    public Imovel(String descricao, String endereco, LocalMapa local, double idCorretor){
         this.idImovel = idImovel;
         this.descricao = descricao;
         this.endereco = endereco;
