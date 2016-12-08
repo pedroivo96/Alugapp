@@ -92,9 +92,5 @@ public class SQLite  extends SQLiteOpenHelper {
         return imoveis;
     }
 
-    public Imovel buscarImovel(int id){
-
-        return null;
-    }
 }
 
