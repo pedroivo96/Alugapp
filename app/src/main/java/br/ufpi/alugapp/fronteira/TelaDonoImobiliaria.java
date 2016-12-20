@@ -23,6 +23,6 @@ public class TelaDonoImobiliaria extends AppCompatActivity {
         setContentView(R.layout.activity_tela_dono_imobiliaria);
 
         controles = new Fachada();
-        
+
     }
 }
