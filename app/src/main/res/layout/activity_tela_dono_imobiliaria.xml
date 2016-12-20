@@ -11,15 +11,15 @@
     android:orientation="vertical"
     tools:context="br.ufpi.alugapp.fronteira.TelaDonoImobiliaria">
 
-    <Button
-        android:layout_height="wrap_content"
+    <TextView
         android:layout_width="match_parent"
-        android:text="Listar Imóveis"
-        android:id="@+id/bDonoListarImoveis"/>
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Imóveis"
+        android:id="@+id/quantidadeImoveis"/>
 
-    <Button
-        android:layout_height="wrap_content"
+    <TextView
         android:layout_width="match_parent"
-        android:text="Listar Corretores"
-        android:id="@+id/bDonoListarCorretores"/>
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Corretores"
+        android:id="@+id/quantidadeCorretores"/>
 </LinearLayout>
