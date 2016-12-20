@@ -27,7 +27,7 @@ public class ImovelController {
         return repositorio.inserirImovel(i);
     }
 
-    public ArrayList<Imovel> listarMeusImoveis(int idCorretor){
+    public ArrayList<Imovel> listarMeusImoveis(double idCorretor){
         ArrayList<Imovel> meusImoveis = new ArrayList<Imovel>();
 
         return meusImoveis;
