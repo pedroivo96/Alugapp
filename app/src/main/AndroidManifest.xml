@@ -18,7 +18,8 @@
         <activity android:name=".fronteira.TelaInserirImovel" />
         <activity android:name=".fronteira.TelaPesquisarImovel" />
         <activity android:name=".fronteira.TelaListarImoveis" />
-        <activity android:name=".fronteira.TelaDetalhesImovel"></activity>
+        <activity android:name=".fronteira.TelaDetalhesImovel" />
+        <activity android:name=".fronteira.TelaCorretor"></activity>
     </application>
 
 </manifest>
