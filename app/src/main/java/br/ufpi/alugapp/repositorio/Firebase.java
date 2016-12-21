@@ -1,8 +1,11 @@
 package br.ufpi.alugapp.repositorio;
 
-/**
- * Created by wellyson on 05/12/16.
- */
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Firebase {
+
+    static DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
 }

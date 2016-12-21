@@ -39,6 +39,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Preço:"
+                android:textColor="#000"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tPreco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000" />
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Corretor:"
                 android:textColor="#000"
                 android:layout_marginRight="10dp"

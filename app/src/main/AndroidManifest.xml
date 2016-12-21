@@ -1,26 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.ufpi.alugapp">
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="br.ufpi.alugapp">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".fronteira.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
+    android:supportsRtl="true" android:theme="@style/AppTheme">
+    <activity android:name=".fronteira.TelaLogin">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".fronteira.TelaInserirImovel" />
-        <activity android:name=".fronteira.TelaPesquisarImovel" />
-        <activity android:name=".fronteira.TelaListarImoveis" />
-        <activity android:name=".fronteira.TelaDetalhesImovel" />
-        <activity android:name=".fronteira.TelaCorretor" />
-        <activity android:name=".fronteira.TelaDonoImobiliaria"></activity>
-    </application>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name=".fronteira.TelaInserirImovel" />
+    <activity android:name=".fronteira.TelaPesquisarImovel" />
+    <activity android:name=".fronteira.TelaListarImoveis" />
+    <activity android:name=".fronteira.TelaDetalhesImovel" />
+    <activity android:name=".fronteira.TelaCorretor" />
+    <activity android:name=".fronteira.TelaDonoImobiliaria" />
+    <activity android:name=".fronteira.TelaCliente"/>
+    <activity android:name=".fronteira.TelaCadastrar"/>
+</application>
 
 </manifest>
