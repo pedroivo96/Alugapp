@@ -8,7 +8,13 @@ import br.ufpi.alugapp.entidades.Usuario;
 
 public class UsuarioController {
 
-    public Usuario cadastrar(String nome, String usuario, String senha, String email, String telefone){
+    public Usuario cadastrarCliente(String nome, String usuario, String senha, String email, String telefone){
+
+        //verificar e depois inserir
+        return null;
+    }
+
+    public Usuario cadastrarCorretor(String nome, String usuario, String senha, String email, String telefone){
 
         //verificar e depois inserir
         return null;

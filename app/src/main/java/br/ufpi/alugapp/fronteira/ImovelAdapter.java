@@ -51,11 +51,13 @@ public class ImovelAdapter extends BaseAdapter {
         TextView descricao = (TextView) view.findViewById(R.id.tDescricao);
         TextView endereco = (TextView) view.findViewById(R.id.tEndereco);
         TextView corretor = (TextView) view.findViewById(R.id.tCorretor);
+        TextView preco = (TextView) view.findViewById(R.id.tPreco);
         // Atualiza os valores das views
         Imovel imv = imoveis.get(position);
         descricao.setText(imv.descricao);
         endereco.setText(imv.endereco);
         corretor.setText(Double.toString(imv.idCorretor));
+        preco.setText(Float.toString(imv.preco));
 
         return view;
     }

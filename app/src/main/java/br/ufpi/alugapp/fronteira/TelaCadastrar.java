@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import br.ufpi.alugapp.R;
@@ -32,32 +33,37 @@ public class TelaCadastrar extends AppCompatActivity {
         EditText edtSenha = ((EditText) findViewById(R.id.edtSenha));
         EditText edtEmail= ((EditText) findViewById(R.id.edtEmail));
         EditText edtTelefone = ((EditText) findViewById(R.id.edtTelefone));
+        RadioGroup rgTipo = (RadioGroup) findViewById(R.id.rgTipo);
 
         String nome = edtNome.getText().toString();
         String usuario = edtUsuario.getText().toString();
         String senha = edtSenha.getText().toString();
         String email = edtEmail.getText().toString();
         String telefone = edtTelefone.getText().toString();
+        long idTipoEscolhido = rgTipo.getCheckedRadioButtonId();
 
-        Usuario user = controles.controladorUsuarios.cadastrar(nome, usuario, senha, email, telefone);
-
-        if(user != null){
-            Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
-
-            Intent intent;
-
-            if(user instanceof Cliente){
+        Intent intent;
+        Usuario user;
+        if(idTipoEscolhido == R.id.rbCliente){
+            user = controles.controladorUsuarios.cadastrarCliente(nome, usuario, senha, email, telefone);
+            if(user != null) {
+                Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                 intent  = new Intent(this, TelaCliente.class);
-            }else if(user instanceof Corretor){
-                intent = new Intent(this, TelaCorretor.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }else{
-                intent  = new Intent(this, TelaDonoImobiliaria.class);
+                Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
             }
-
-            intent.putExtra("user", user);
-            startActivity(intent);
         }else{
-            Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+            user = controles.controladorUsuarios.cadastrarCorretor(nome, usuario, senha, email, telefone);
+            if(user != null) {
+                Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
+                intent  = new Intent(this, TelaCorretor.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
