@@ -7,8 +7,10 @@ package br.ufpi.alugapp.controle;
 public class Fachada {
 
     public ImovelController controladorImoveis;
+    public UsuarioController controladorUsuarios;
 
     public Fachada(){
         this.controladorImoveis = new ImovelController();
+        this.controladorUsuarios = new UsuarioController();
     }
 }
