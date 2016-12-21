@@ -19,7 +19,6 @@ import br.ufpi.alugapp.entidades.Usuario;
 public class TelaPesquisarImovel extends AppCompatActivity {
 
     private Fachada controles;
-    private Usuario user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         setContentView(R.layout.activity_tela_pesquisar_imovel);
 
         this.controles = new Fachada();
-        this.user = (Usuario) getIntent().getSerializableExtra("user");
     }
 
     public void pesquisar(View view){

@@ -24,9 +24,9 @@ public class ImovelController {
         return repositorio.pesquisarImoveis(pesquisa);
     }
 
-    public boolean inserirImovel(String descricao, String endereco, double idCorretor, boolean visible, LocalMapa local, float preco){
+    public boolean inserirImovel(String descricao, String endereco, double idCorretor, LocalMapa local, float preco){
 
-        return visible;
+        return false;
     }
 
     public ArrayList<Imovel> listarMeusImoveis(double idCorretor){
