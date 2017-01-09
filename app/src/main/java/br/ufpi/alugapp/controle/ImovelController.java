@@ -21,7 +21,8 @@ public class ImovelController {
     }
 
     public ArrayList<Imovel> pesquisarImoveis(String pesquisa){
-        return repositorio.pesquisarImoveis(pesquisa);
+        //return repositorio.pesquisarImoveis(pesquisa);
+        return null;
     }
 
     public boolean inserirImovel(String descricao, String endereco, double idCorretor, LocalMapa local, float preco){
