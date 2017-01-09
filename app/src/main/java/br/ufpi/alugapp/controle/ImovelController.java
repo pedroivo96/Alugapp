@@ -20,7 +20,7 @@ public class ImovelController {
         this.repositorio = new ImovelRepository();
     }
 
-    public ArrayList<Imovel> pesquisarImoveis(String pesquisa){
+    public ArrayList<Imovel> pesquisarImoveis(String endereco, String descricao, float FaixaPreco){
         //return repositorio.pesquisarImoveis(pesquisa);
         return null;
     }

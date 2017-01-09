@@ -29,9 +29,14 @@ public class TelaPesquisarImovel extends AppCompatActivity {
     }
 
     public void pesquisar(View view){
-        EditText tPesquisa = (EditText) findViewById(R.id.tPesquisa);
-        String pesquisa = tPesquisa.getText().toString();
-        ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisarImoveis(pesquisa);
+        EditText tEndereco = (EditText) findViewById(R.id.tEndereco);
+        String endereco = tEndereco.getText().toString();
+        EditText tDescricao = (EditText) findViewById(R.id.tDescricao);
+        String descricao = tDescricao.getText().toString();
+        EditText tFaixaPreco = (EditText) findViewById(R.id.tFaixaPreco);
+        float faixaPreco = Float.parseFloat(tFaixaPreco.getText().toString());
+
+        ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisarImoveis(endereco, descricao, faixaPreco);
 
         if(imoveis == null){
             Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();

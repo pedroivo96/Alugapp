@@ -22,10 +22,14 @@ public class ImovelRepository{
 
     private String imovelID = "0";
 
-    ArrayList<Imovel> pesquisar(String pesquisa){
+    ArrayList<Imovel> pesquisar(String endereco, String descricao, float FaixaPreco){
+
+        //retornar a interseção dos resultados da pesquisa por endereço, descriçao e faixa de preço.
+        //preços menores que FaixaPreco.
+
         final ArrayList<Imovel> imoveis = new ArrayList<>();
 
-        ValueEventListener postListener = new ValueEventListener() {
+        /*ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -43,7 +47,7 @@ public class ImovelRepository{
             }
         };
 
-        Firebase.mDatabase.child("imoveis").equalTo(pesquisa).addListenerForSingleValueEvent(postListener);
+        Firebase.mDatabase.child("imoveis").equalTo(pesquisa).addListenerForSingleValueEvent(postListener);*/
 
         return imoveis;
     }

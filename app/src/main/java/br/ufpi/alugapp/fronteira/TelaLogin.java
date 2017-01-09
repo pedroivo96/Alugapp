@@ -34,6 +34,8 @@ public class TelaLogin extends AppCompatActivity {
         String usuario = edtUsuario.getText().toString();
         String senha = edtSenha.getText().toString();
 
+        Toast.makeText(this, usuario, Toast.LENGTH_SHORT).show();
+
         Usuario user = controles.controladorUsuarios.login(usuario, senha);
 
         if(user != null){
