@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_tela_listar_imoveis"
+    android:id="@+id/activity_tela_dono_imobiliaria"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.ufpi.alugapp.fronteira.TelaListarImoveis"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="br.ufpi.alugapp.fronteira.TelaDonoImobiliaria">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultados da pesquisa:"
-        android:textStyle="bold"/>
-
-    <ListView
-        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"></ListView>
+        android:text="Quantidade de Imóveis"
+        android:id="@+id/quantidadeImoveis"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Corretores"
+        android:id="@+id/quantidadeCorretores"/>
 </LinearLayout>

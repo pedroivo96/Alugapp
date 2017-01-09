@@ -1,5 +1,6 @@
 package br.ufpi.alugapp.controle;
 
+import br.ufpi.alugapp.entidades.LocalMapa;
 import br.ufpi.alugapp.repositorio.ImovelRepository;
 
 import java.util.ArrayList;
@@ -19,18 +20,19 @@ public class ImovelController {
         this.repositorio = new ImovelRepository();
     }
 
-    public Imovel buscarImovel(int id){
-
+    public ArrayList<Imovel> pesquisarImoveis(String endereco, String descricao, float FaixaPreco){
+        //return repositorio.pesquisarImoveis(pesquisa);
         return null;
     }
 
-    public ArrayList<Imovel> pesquisarImoveis(String descricao){
-
-        return null;
-    }
-
-    public boolean inserirImovel(Imovel i){
+    public boolean inserirImovel(String descricao, String endereco, double idCorretor, LocalMapa local, float preco){
 
         return false;
+    }
+
+    public ArrayList<Imovel> listarMeusImoveis(double idCorretor){
+        ArrayList<Imovel> meusImoveis = new ArrayList<Imovel>();
+
+        return meusImoveis;
     }
 }

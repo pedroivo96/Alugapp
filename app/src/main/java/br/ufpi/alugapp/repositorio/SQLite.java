@@ -66,7 +66,7 @@ public class SQLite  extends SQLiteOpenHelper {
         ArrayList<Imovel> imoveis = new ArrayList<>();
 
         try {
-            Cursor c = db.query("imovel", null, "descricao = '" + pesquisa + "' or endereco = '"+ pesquisa + "'",
+            Cursor c = db.query("imovel", null, "descricao like '%" + pesquisa + "%' or endereco like '%"+ pesquisa + "%'",
                     null, null, null, null);
 
             if (c.moveToFirst()) {

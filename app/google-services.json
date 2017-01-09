@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "354720707381",
+    "firebase_url": "https://alugapp-c3b0a.firebaseio.com",
+    "project_id": "alugapp-c3b0a",
+    "storage_bucket": "alugapp-c3b0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354720707381:android:0b839f3b0d0ec01d",
+        "android_client_info": {
+          "package_name": "br.ufpi.alugapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354720707381-ihajev0lc1o5sno3sfhfmfo55mq2t2ll.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3Oa14qR92XuCJe3Vns_hVgDwSqMIk9nE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
