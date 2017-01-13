@@ -44,9 +44,7 @@ public class ImovelController {
 
     public Imovel alterarImovel(String descricao , String endereco , float preco){
 
-        Imovel i;
-
-        return i;
+        return null;
     }
 
     public boolean excluirDaBusca(int idImovel){

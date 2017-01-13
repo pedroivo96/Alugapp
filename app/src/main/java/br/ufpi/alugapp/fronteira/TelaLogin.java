@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import br.ufpi.alugapp.R;
@@ -57,7 +56,7 @@ public class TelaLogin extends AppCompatActivity {
     }
 
     public void cadastrar(View view){
-        Intent intent = new Intent(this, TelaCadastrar.class);
+        Intent intent = new Intent(this, TelaCadastro.class);
         startActivity(intent);
     }
 }

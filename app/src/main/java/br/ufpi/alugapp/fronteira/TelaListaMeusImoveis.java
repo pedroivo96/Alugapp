@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.entidades.Imovel;
 
-public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class TelaListaMeusImoveis extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ArrayList<Imovel> imoveis;
     private ListView listView;
@@ -22,7 +22,7 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_resultado_pesquisa);
+        setContentView(R.layout.activity_tela_lista_meus_imoveis);
 
         this.imoveis = (ArrayList<Imovel>) getIntent().getSerializableExtra("imoveis");
 
@@ -34,9 +34,10 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
         listView.setOnItemClickListener(this);
     }
 
-    public void onItemClick(AdapterView<?> parent, View view, int idx, long id) {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int idx, long id)  {
         Imovel imv = this.imoveis.get(idx);
-        Intent intent = new Intent(this, TelaDetalhesImovelCliente.class);
+        Intent intent = new Intent(this, TelaDetalhesImovelCorretor.class);
         intent.putExtra("imovel", imv);
         startActivity(intent);
     }
@@ -44,5 +45,4 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
     public void verNoMapa(View v){
 
     }
-
 }

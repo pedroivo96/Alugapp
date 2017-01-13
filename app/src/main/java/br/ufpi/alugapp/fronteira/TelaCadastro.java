@@ -14,7 +14,7 @@ import br.ufpi.alugapp.entidades.Cliente;
 import br.ufpi.alugapp.entidades.Corretor;
 import br.ufpi.alugapp.entidades.Usuario;
 
-public class TelaCadastrar extends AppCompatActivity {
+public class TelaCadastro extends AppCompatActivity {
 
     private Fachada controles;
 
