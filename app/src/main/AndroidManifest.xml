@@ -12,7 +12,7 @@ package="br.ufpi.alugapp">
     </activity>
     <activity android:name=".fronteira.TelaInserirImovel" />
     <activity android:name=".fronteira.TelaPesquisarImovel" />
-    <activity android:name=".fronteira.TelaListarImoveis" />
+    <activity android:name=".fronteira.TelaResultadoPesquisa" />
     <activity android:name=".fronteira.TelaDetalhesImovel" />
     <activity android:name=".fronteira.TelaCorretor" />
     <activity android:name=".fronteira.TelaDonoImobiliaria" />

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.entidades.Imovel;
 
-public class TelaListarImoveis extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ArrayList<Imovel> imoveis;
     private ListView listView;

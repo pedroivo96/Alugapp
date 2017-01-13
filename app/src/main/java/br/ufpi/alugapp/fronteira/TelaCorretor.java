@@ -44,7 +44,7 @@ public class TelaCorretor extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayList<Imovel> meusImoveis = controles.controladorImoveis.listarMeusImoveis(idCorretor);
 
-                Intent i = new Intent(getApplication(),TelaListarImoveis.class);
+                Intent i = new Intent(getApplication(),TelaResultadoPesquisa.class);
                 i.putExtra("imoveis", meusImoveis);
 
                 startActivity(i);
