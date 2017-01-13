@@ -71,14 +71,14 @@ public class SQLite  extends SQLiteOpenHelper {
 
             if (c.moveToFirst()) {
                 do {
-                    Imovel imv = new Imovel();
+                    /*Imovel imv = new Imovel();
                     imoveis.add(imv);
 
                     imv.idImovel = c.getLong(c.getColumnIndex("_id"));
                     imv.descricao = c.getString(c.getColumnIndex("descricao"));
                     imv.endereco = c.getString(c.getColumnIndex("endereco"));
                     imv.local.latitude = c.getLong(c.getColumnIndex("latitude"));
-                    imv.local.longitude = c.getLong(c.getColumnIndex("longitude"));
+                    imv.local.longitude = c.getLong(c.getColumnIndex("longitude"));*/
 
                 } while (c.moveToNext());
             }

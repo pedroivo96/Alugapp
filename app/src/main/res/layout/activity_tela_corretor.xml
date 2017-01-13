@@ -50,36 +50,42 @@
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bInserirImoveis"
         android:layout_width="match_parent"
         android:text="Inserir Imóvel"
         android:onClick="inserirImovel"/>
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bListarImoveis"
         android:layout_width="match_parent"
         android:text="Meus Imóveis"
         android:onClick="listarMeusImoveis"/>
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bListarVisitas"
         android:layout_width="match_parent"
         android:text="Visitas Solicitadas"
         android:onClick="listarVisitas"/>
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bListarPerguntas"
         android:layout_width="match_parent"
         android:text="Perguntas"
         android:onClick="listarPerguntas"/>
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bPesquisar"
         android:layout_width="match_parent"
         android:text="Pesquisar Imóveis"
         android:onClick="pesquisar"/>
 
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/bLogout"
         android:layout_width="match_parent"
         android:text="Sair"
         android:onClick="logout"/>
