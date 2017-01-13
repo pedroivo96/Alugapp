@@ -6,4 +6,8 @@ package br.ufpi.alugapp.entidades;
 
 public class Dono extends Usuario{
 
+
+    public Dono(String nome, String usuario, String senha, String email, String telefone, int idUser) {
+        super(nome, usuario, senha, email, telefone, idUser);
+    }
 }

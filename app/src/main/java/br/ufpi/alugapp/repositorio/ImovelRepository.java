@@ -3,16 +3,16 @@ package br.ufpi.alugapp.repositorio;
 
 import android.util.Log;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 import br.ufpi.alugapp.entidades.Imovel;
 import br.ufpi.alugapp.entidades.LocalMapa;
 
-import static com.google.android.gms.internal.zzs.TAG;
+//import static com.google.android.gms.internal.zzs.TAG;
 
 /**
  * Created by wellyson on 05/12/16.
@@ -55,7 +55,7 @@ public class ImovelRepository{
     Imovel inserirImovel(String descricao, String endereco, LocalMapa local, double idCorretor, float preco){
         Imovel imovel = new Imovel(descricao, endereco, local, idCorretor, preco);
 
-        Firebase.mDatabase.child("imoveis").child(imovelID).setValue(imovel);
+        //Firebase.mDatabase.child("imoveis").child(imovelID).setValue(imovel);
 
         return imovel;
     }
@@ -64,7 +64,7 @@ public class ImovelRepository{
 
         final ArrayList<Imovel> imoveis = new ArrayList<>();
 
-        ValueEventListener postListener = new ValueEventListener() {
+        /*ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -82,7 +82,7 @@ public class ImovelRepository{
             }
         };
 
-        Firebase.mDatabase.child("imoveis").equalTo(idCorretor).addListenerForSingleValueEvent(postListener);
+        Firebase.mDatabase.child("imoveis").equalTo(idCorretor).addListenerForSingleValueEvent(postListener);*/
         return imoveis;
     }
 

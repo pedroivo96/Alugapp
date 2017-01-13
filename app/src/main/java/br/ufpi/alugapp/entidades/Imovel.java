@@ -12,15 +12,13 @@ public class Imovel implements Serializable{
 
     public String descricao;
     public String endereco;
-    public double idImovel;
-    public double idCorretor;
+    public int idImovel;
+    public int idCorretor;
     public boolean visible;
     public LocalMapa local;
     public float preco;
 
-    public Imovel(){}
-
-    public Imovel(String descricao, String endereco, LocalMapa local, double idCorretor, float preco){
+    public Imovel(String descricao, String endereco, LocalMapa local, float preco, int idCorretor, int idImovel){
         this.idImovel = idImovel;
         this.descricao = descricao;
         this.endereco = endereco;
@@ -32,5 +30,53 @@ public class Imovel implements Serializable{
 
     void setVisible(boolean visible){
         this.visible = visible;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public int getIdImovel() {
+        return idImovel;
+    }
+
+    public int getIdCorretor() {
+        return idCorretor;
+    }
+
+    public void setIdCorretor(int idCorretor) {
+        this.idCorretor = idCorretor;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public LocalMapa getLocal() {
+        return local;
+    }
+
+    public void setLocal(LocalMapa local) {
+        this.local = local;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
     }
 }

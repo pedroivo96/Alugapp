@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.entidades.Imovel;
 import br.ufpi.alugapp.entidades.Usuario;

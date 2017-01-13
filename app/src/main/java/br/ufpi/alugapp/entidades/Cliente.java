@@ -8,8 +8,18 @@ import java.util.ArrayList;
 
 public class Cliente extends Usuario{
 
-    public ArrayList<Imovel> getImoveisFavoritados(){
-        return null;
+    public ArrayList<Imovel> imoveisFavoritos;
+
+    public Cliente(String nome, String usuario, String senha, String email, String telefone, int idUser){
+        super(nome, usuario, senha, email, telefone, idUser);
+        this.imoveisFavoritos = new ArrayList<>();
     }
 
+    public ArrayList<Imovel> getImoveisFavoritos() {
+        return imoveisFavoritos;
+    }
+
+    public void setImoveisFavoritos(ArrayList<Imovel> imoveisFavoritos) {
+        this.imoveisFavoritos = imoveisFavoritos;
+    }
 }

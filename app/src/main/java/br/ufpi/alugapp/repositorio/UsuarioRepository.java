@@ -8,7 +8,7 @@ public class UsuarioRepository {
 
     private String clienteID = "0";
 
-    private String corretorID = "0";
+    /*private String corretorID = "0";
 
     Usuario cadastrarCliente(String nome, String usuario, String senha, String email, String telefone){
         Usuario cliente = new Usuario(nome, usuario, senha, email, telefone);
@@ -34,6 +34,6 @@ public class UsuarioRepository {
 
     Usuario buscarPorEmail(String email){
         return null;
-    }
+    }*/
 
 }
