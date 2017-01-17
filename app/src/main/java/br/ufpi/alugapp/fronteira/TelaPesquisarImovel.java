@@ -33,7 +33,7 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         EditText tFaixaPreco = (EditText) findViewById(R.id.tFaixaPreco);
         float faixaPreco = Float.parseFloat(tFaixaPreco.getText().toString());
 
-        ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisarImoveis(endereco, descricao, faixaPreco);
+        ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisar(endereco, descricao, faixaPreco);
 
         if(imoveis == null){
             Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();

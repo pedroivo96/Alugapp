@@ -26,11 +26,11 @@ public class TelaDetalhesImovelCorretor extends AppCompatActivity {
         tEndereco = (TextView) findViewById(R.id.tEndereco);
         tDescricao = (TextView) findViewById(R.id.tDescricao);
 
-        this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
+        /*this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
 
         tValor.setText(Float.toString(imv.getPreco()));
         tEndereco.setText(imv.getEndereco());
-        tDescricao.setText(imv.getDescricao());
+        tDescricao.setText(imv.getDescricao());*/
 
     }
 

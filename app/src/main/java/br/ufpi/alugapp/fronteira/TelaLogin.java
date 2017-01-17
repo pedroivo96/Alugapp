@@ -61,7 +61,7 @@ public class TelaLogin extends AppCompatActivity {
     }
 
     public void cadastrar(View view){
-        Intent intent = new Intent(this, TelaCadastro.class);
+        Intent intent = new Intent(this, TelaCliente.class);
         startActivity(intent);
     }
 }
