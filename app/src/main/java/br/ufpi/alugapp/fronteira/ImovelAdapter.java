@@ -21,10 +21,10 @@ public class ImovelAdapter extends BaseAdapter {
     private final Context context;
     private final ArrayList<Imovel> imoveis;
 
-    public ImovelAdapter(Context context, ArrayList<Imovel> planetas) {
+    public ImovelAdapter(Context context, ArrayList<Imovel> imoveis) {
 
         this.context = context;
-        this.imoveis = planetas;
+        this.imoveis = imoveis;
     }
 
     @Override
@@ -49,13 +49,11 @@ public class ImovelAdapter extends BaseAdapter {
         // Faz findViewById das views que precisa atualizar
         TextView descricao = (TextView) view.findViewById(R.id.tDescricao);
         TextView endereco = (TextView) view.findViewById(R.id.tEndereco);
-        TextView corretor = (TextView) view.findViewById(R.id.tCorretor);
         TextView preco = (TextView) view.findViewById(R.id.tPreco);
         // Atualiza os valores das views
         Imovel imv = imoveis.get(position);
         descricao.setText(imv.descricao);
         endereco.setText(imv.endereco);
-        corretor.setText(Double.toString(imv.idCorretor));
         preco.setText(Float.toString(imv.preco));
 
         return view;

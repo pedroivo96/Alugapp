@@ -5,29 +5,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CursorAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import br.ufpi.alugapp.R;
-import br.ufpi.alugapp.entidades.Imovel;
+import br.ufpi.alugapp.entidades.Pergunta;
 
-public class TelaListaMeusImoveis extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class TelaListaPerguntas extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
-    private ArrayList<Imovel> imoveis;
-    private ListView listView;
+    ListView listView;
+    ArrayList<Pergunta> perguntas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_lista_meus_imoveis);
+        setContentView(R.layout.activity_tela_lista_perguntas);
 
-        this.imoveis = (ArrayList<Imovel>) getIntent().getSerializableExtra("imoveis");
+        this.perguntas = (ArrayList<Pergunta>) getIntent().getSerializableExtra("perguntas");
 
         listView = (ListView) findViewById(R.id.listview);
 
-        listView.setAdapter(new ImovelAdapter(this, imoveis));
+        listView.setAdapter(new PerguntaAdapter(this, perguntas));
 
         //click item da lista
         listView.setOnItemClickListener(this);
@@ -35,13 +34,9 @@ public class TelaListaMeusImoveis extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int idx, long id)  {
-        Imovel imv = this.imoveis.get(idx);
+        Pergunta p = this.perguntas.get(idx);
         Intent intent = new Intent(this, TelaDetalhesImovelCorretor.class);
-        intent.putExtra("imovel", imv);
+        intent.putExtra("pergunta", p);
         startActivity(intent);
-    }
-
-    public void verNoMapa(View v){
-
     }
 }

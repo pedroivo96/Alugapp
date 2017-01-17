@@ -8,23 +8,62 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fronteira.TelaLogin">
+        <activity
+            android:name=".fronteira.TelaLogin"
+            android:label="Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fronteira.TelaInserirImovel" />
-        <activity android:name=".fronteira.TelaPesquisarImovel" />
-        <activity android:name=".fronteira.TelaResultadoPesquisa" />
-        <activity android:name=".fronteira.TelaDetalhesImovelCliente" />
-        <activity android:name=".fronteira.TelaCorretor" />
-        <activity android:name=".fronteira.TelaDonoImobiliaria" />
-        <activity android:name=".fronteira.TelaCliente" />
-        <activity android:name=".fronteira.TelaCadastro" />
-        <activity android:name=".fronteira.TelaListaMeusImoveis" />
-        <activity android:name=".fronteira.TelaDetalhesImovelCorretor"></activity>
+        <activity
+            android:name=".fronteira.TelaInserirImovel"
+            android:label="Inserir imóvel" />
+        <activity
+            android:name=".fronteira.TelaPesquisarImovel"
+            android:label="Pesquisar imóvel" />
+        <activity
+            android:name=".fronteira.TelaResultadoPesquisa"
+            android:label="Resultados da pesquisa" />
+        <activity
+            android:name=".fronteira.TelaDetalhesImovelCliente"
+            android:label="Detalhes do imóvel" />
+        <activity
+            android:name=".fronteira.TelaCorretor"
+            android:label="Corretor" />
+        <activity
+            android:name=".fronteira.TelaDonoImobiliaria"
+            android:label="Dono imobiliária" />
+        <activity
+            android:name=".fronteira.TelaCliente"
+            android:label="Cliente" />
+        <activity
+            android:name=".fronteira.TelaCadastro"
+            android:label="Cadastro" />
+        <activity
+            android:name=".fronteira.TelaListaMeusImoveis"
+            android:label="Meus imóveis" />
+        <activity
+            android:name=".fronteira.TelaDetalhesImovelCorretor"
+            android:label="Detalhes do imóvel" />
+        <activity
+            android:name=".fronteira.TelaRealizarPergunta"
+            android:label="Realizar pergunta" />
+        <activity
+            android:name=".fronteira.TelaListaPerguntas"
+            android:label="Perguntas" />
+        <activity
+            android:name=".fronteira.TelaSolicitarVisita"
+            android:label="Solicitar visita" />
+        <activity
+            android:name=".fronteira.TelaResponderPergunta"
+            android:label="Responder pergunta" />
+        <activity
+            android:name=".fronteira.TelaResponderVisita"
+            android:label="Responder visita" />
+        <activity android:name=".fronteira.TelaListaVisitas"
+            android:label="Visitas"></activity>
     </application>
 
 </manifest>

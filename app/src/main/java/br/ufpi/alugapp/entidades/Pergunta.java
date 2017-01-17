@@ -1,12 +1,15 @@
 package br.ufpi.alugapp.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by wellyson on 12/01/17.
  */
 
-public class Pergunta {
+public class Pergunta implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     public int idPergunta;
     public int idImovel;

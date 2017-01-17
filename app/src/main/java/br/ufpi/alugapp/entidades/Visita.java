@@ -1,12 +1,16 @@
 package br.ufpi.alugapp.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by wellyson on 12/01/17.
  */
 
-public class Visita {
+public class Visita implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     int idVisita;
     int idImovel;
     int idCliente;

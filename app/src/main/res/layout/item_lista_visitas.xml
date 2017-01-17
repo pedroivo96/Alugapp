@@ -5,50 +5,49 @@
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp">
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="Descrição:"
+                android:text="ID Imóvel:"
                 android:textColor="#000"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/tDescricao"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/tIDImovel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
                 android:textColor="#000"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Endereço:"
+                android:text="Data:"
                 android:textColor="#000"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/tEndereco"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/tData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:textColor="#000" />
-
+                android:textColor="#000"/>
         </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Preço:"
+                android:text="Mensagem:"
                 android:textColor="#000"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/tPreco"
+                android:id="@+id/tMensagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000" />
-
+                android:textColor="#000"/>
         </TableRow>
     </TableLayout>
 
