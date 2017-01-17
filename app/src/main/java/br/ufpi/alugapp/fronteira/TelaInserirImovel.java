@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -16,6 +17,12 @@ import br.ufpi.alugapp.entidades.LocalMapa;
 public class TelaInserirImovel extends AppCompatActivity {
 
     private Fachada controles;
+    EditText edtEndereco;
+    EditText edtDescricao;
+    EditText edtPreco;
+    TextView tIDCorretor;
+    LocalMapa lm;
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,24 +31,43 @@ public class TelaInserirImovel extends AppCompatActivity {
 
 
 
-        EditText edtEndereco = (EditText) findViewById(R.id.edtEndereco);
-        EditText edtDescricao = (EditText) findViewById(R.id.edtDescricao);
-        EditText edtPreco = (EditText) findViewById(R.id.edtPreco);
-        TextView tIDCorretor = (TextView) findViewById(R.id.tIDCorretor);
+        edtEndereco = (EditText) findViewById(R.id.edtEndereco);
+        edtDescricao = (EditText) findViewById(R.id.edtDescricao);
+        edtPreco = (EditText) findViewById(R.id.edtPreco);
+        tIDCorretor = (TextView) findViewById(R.id.tIDCorretor);
 
-        Intent i = getIntent();
+        i = getIntent();
 
         edtEndereco.setText(i.getStringExtra("endereco"));
 
         tIDCorretor.setText(i.getStringExtra("IDCorretor").toString());
 
-        LocalMapa lm = new LocalMapa(i.getDoubleExtra("latitude", -1) , i.getDoubleExtra("longitude", -1));
+        lm = new LocalMapa(i.getDoubleExtra("latitude", -1) , i.getDoubleExtra("longitude", -1));
 
-        controles.controladorImoveis.inserirImovel(edtEndereco.getText().toString(),
-                                                   edtDescricao.getText().toString(),
-                                                   i.getSerializableExtra("localMapa"),
-                                                   Float.parseFloat(edtPreco.getText().toString()),
-                                                   i.getIntExtra("IDCorretor", -1));
+    }
+
+    public void inserirImovel(View v){
+
+        if(edtDescricao.getText().toString().isEmpty() || edtEndereco.getText().toString().isEmpty() ||
+                edtPreco.getText().toString().isEmpty()){
+            Toast.makeText(this, "Entrada Inválida", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            if(controles.controladorImoveis.inserirImovel(edtDescricao.getText().toString(),
+                    edtEndereco.getText().toString(),
+                    lm,
+                    Float.parseFloat(edtPreco.getText().toString()),
+                    i.getIntExtra("IDCorretor", -1))){
+
+                //Redirecionar TelaDetalhes
+
+            }
+            else{
+                Toast.makeText(this, "Erro. Tente Novamente", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
     }
 
 }
