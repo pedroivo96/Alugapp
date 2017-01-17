@@ -30,8 +30,8 @@ public class TelaSolicitarVisita extends AppCompatActivity {
 
     public void solicitarVisita(View view){
 
-        final EditText edtData = (EditText) findViewById(R.id.edtData);
-        EditText edtHorario = (EditText) findViewById(R.id.edtHorario);
+    //    final EditText edtData = (EditText) findViewById(R.id.edtData);
+     //   EditText edtHorario = (EditText) findViewById(R.id.edtHorario);
         EditText edtMensagem = (EditText) findViewById(R.id.edtMensagem);
         CalendarView calendario = (CalendarView) findViewById(R.id.calendar) ;
         Spinner spHoras = (Spinner) findViewById(R.id.spHoras);
@@ -52,7 +52,7 @@ public class TelaSolicitarVisita extends AppCompatActivity {
         calendario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
-                edtData.setText("Data : " + i + " / " + i1 + " / " + i2);
+             //   edtData.setText("Data : " + i + " / " + i1 + " / " + i2);
                 data.setDate(i);
                 data.setMonth(i1);
                 data.setYear(i2);
