@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CursorAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.entidades.Imovel;
 
-public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class TelaImoveisFavoritos extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ArrayList<Imovel> imoveis;
     private ListView listView;
@@ -21,7 +20,7 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_resultado_pesquisa);
+        setContentView(R.layout.activity_tela_imoveis_favoritos);
 
         this.imoveis = (ArrayList<Imovel>) getIntent().getSerializableExtra("imoveis");
 
@@ -39,9 +38,4 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
         intent.putExtra("imovel", imv);
         startActivity(intent);
     }
-
-    public void verNoMapa(View v){
-
-    }
-
 }

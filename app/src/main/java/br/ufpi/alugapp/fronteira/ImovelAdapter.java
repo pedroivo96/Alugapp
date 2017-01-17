@@ -45,7 +45,7 @@ public class ImovelAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Infla a view
-        View view = LayoutInflater.from(context).inflate(R.layout.item_lista_resultado, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_lista_imoveis, parent, false);
         // Faz findViewById das views que precisa atualizar
         TextView descricao = (TextView) view.findViewById(R.id.tDescricao);
         TextView endereco = (TextView) view.findViewById(R.id.tEndereco);

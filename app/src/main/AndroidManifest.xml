@@ -62,8 +62,14 @@
         <activity
             android:name=".fronteira.TelaResponderVisita"
             android:label="Responder visita" />
-        <activity android:name=".fronteira.TelaListaVisitas"
-            android:label="Visitas"></activity>
+        <activity
+            android:name=".fronteira.TelaListaVisitas"
+            android:label="Visitas" />
+        <activity
+            android:name=".fronteira.TelaImoveisFavoritos"
+            android:label="Favoritos" />
+        <activity android:name=".fronteira.TelaAlterarImovel"
+            android:label="Alterar dados imóvel"/>
     </application>
 
 </manifest>

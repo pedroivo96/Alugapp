@@ -15,6 +15,7 @@ public class Imovel implements Serializable{
     public int idImovel;
     public int idCorretor;
     public boolean visible;
+    public boolean favoritado;
     public LocalMapa local;
     public float preco;
 
@@ -26,6 +27,15 @@ public class Imovel implements Serializable{
         this.visible = true;
         this.local = local;
         this.preco = preco;
+        this.favoritado = false;
+    }
+
+    public boolean isFavoritado() {
+        return favoritado;
+    }
+
+    public void setFavoritado(boolean favoritado) {
+        this.favoritado = favoritado;
     }
 
     void setVisible(boolean visible){
