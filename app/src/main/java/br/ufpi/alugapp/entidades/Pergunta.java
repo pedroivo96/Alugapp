@@ -14,6 +14,7 @@ public class Pergunta implements Serializable {
     public int idPergunta;
     public int idImovel;
     public int idCliente;
+    public int idCorretor;
     public Date data;
     public String pergunta;
     public String resposta;
@@ -25,6 +26,14 @@ public class Pergunta implements Serializable {
         this.data = data;
         this.pergunta = pergunta;
         this.resposta = resposta;
+    }
+
+    public int getIdCorretor() {
+        return idCorretor;
+    }
+
+    public void setIdCorretor(int idCorretor) {
+        this.idCorretor = idCorretor;
     }
 
     public int getIdPergunta() {

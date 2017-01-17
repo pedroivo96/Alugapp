@@ -14,35 +14,59 @@ import br.ufpi.alugapp.entidades.Imovel;
 
 public class ImovelController {
 
-    ImovelRepository repositorio;
+    ImovelRepository repositorioImovel;
 
     public ImovelController(){
-        this.repositorio = new ImovelRepository();
+        this.repositorioImovel = new ImovelRepository();
     }
 
-    public ArrayList<Imovel> pesquisarImoveis(String endereco, String descricao, float FaixaPreco){
-        //return repositorio.pesquisarImoveis(pesquisa);
+    public ArrayList<Imovel> pesquisar(String endereco, String descricao, float faixaPreco){
+
+        ArrayList<Imovel> resultadoPorEndereco, resultadoPorDescricao, resultadoPorPreco, enderecoDescricao, descricaoPreco;
+
+        //resultadoPorEndereco =
+        //resultadoPorDescricao =
+        //resultadoPorPreco =
+
+        /*if(endereco != "" && descricao != ""){
+            for(Imovel i : resultadoPorEndereco){
+                for(Imovel i2 : resultadoPorDescricao)
+                    if (i.equals(i2))
+                        enderecoDescricao.add(i);
+            }
+        }else if(descricao != "" && faixaPreco != ""){
+            for(Imovel i : resultadoPorDescricao){
+                for(Imovel i2 : resultadoPorPreco)
+                    if (i.equals(i2))
+                        descricaoPreco.add(i);
+            }
+        }else if(faixaPreco != ""){
+
+        }*/
+
         return null;
     }
 
-    public boolean inserirImovel(String descricao, String endereco, LocalMapa local, float preco,int idCorretor){
+    public Imovel inserirImovel(String descricao, String endereco, LocalMapa local, float preco,int idCorretor){
 
-        return false;
+
+
+        return null;
     }
 
     public ArrayList<Imovel> listarMeusImoveis(int idCorretor){
-        ArrayList<Imovel> meusImoveis = new ArrayList<Imovel>();
+        ArrayList<Imovel> meusImoveis = new ArrayList<>();
 
         return meusImoveis;
     }
 
-    public ArrayList<Imovel> listarMeusFavoritos(){
-        ArrayList<Imovel> meusFavoritos = new ArrayList<Imovel>();
+    public ArrayList<Imovel> listarMeusFavoritos(int idCliente){
+        ArrayList<Imovel> meusFavoritos = new ArrayList<>();
 
         return meusFavoritos;
     }
 
-    public Imovel alterarImovel(String descricao , String endereco , float preco){
+    public Imovel alterarImovel(String descricao , String endereco , float preco, int idImovel){
 
         return null;
     }

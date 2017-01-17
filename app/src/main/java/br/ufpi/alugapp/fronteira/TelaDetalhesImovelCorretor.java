@@ -26,11 +26,11 @@ public class TelaDetalhesImovelCorretor extends AppCompatActivity {
         tEndereco = (TextView) findViewById(R.id.tEndereco);
         tDescricao = (TextView) findViewById(R.id.tDescricao);
 
-        this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
+        /*this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
 
         tValor.setText(Float.toString(imv.getPreco()));
         tEndereco.setText(imv.getEndereco());
-        tDescricao.setText(imv.getDescricao());
+        tDescricao.setText(imv.getDescricao());*/
 
     }
 
@@ -41,9 +41,11 @@ public class TelaDetalhesImovelCorretor extends AppCompatActivity {
     }
 
     public void verNoMapa(View v){
-        //Intent intent = new Intent(this, .class);
-        //intent.putExtra("imovel", this.imv);
-        // startActivity(intent);
+        Intent intent = new Intent(this, TelaMapa.class);
+        intent.putExtra("comando", 2);
+        intent.putExtra("latitude", this.imv.getLocal().latitude);
+        intent.putExtra("longitude", this.imv.getLocal().longitude);
+        startActivity(intent);
     }
 
     public void alterar(View v){

@@ -38,7 +38,9 @@ public class TelaCorretor extends AppCompatActivity {
     }
 
     public void inserirImovel(View view){
-        Intent intent = new Intent(this, TelaInserirImovel.class);
+        Intent intent = new Intent(this, TelaMapa.class);
+        intent.putExtra("comando", 1);
+        intent.putExtra("IDCorretor", this.user.getIdUser());
         startActivity(intent);
     }
 

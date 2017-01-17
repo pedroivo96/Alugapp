@@ -14,6 +14,7 @@ public class Visita implements Serializable {
     int idVisita;
     int idImovel;
     int idCliente;
+    int idCorretor;
     Date data;
     String mensagem;
     String resposta;
@@ -25,6 +26,15 @@ public class Visita implements Serializable {
         this.mensagem = mensagem;
         this.resposta = resposta;
         this.idVisita = idVisita;
+    }
+
+
+    public int getIdCorretor() {
+        return idCorretor;
+    }
+
+    public void setIdCorretor(int idCorretor) {
+        this.idCorretor = idCorretor;
     }
 
     public int getIdVisita() {

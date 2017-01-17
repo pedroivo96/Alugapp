@@ -3,6 +3,7 @@ package br.ufpi.alugapp.fronteira;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,13 +21,18 @@ public class TelaCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cliente);
 
-        this.user = (Usuario) getIntent().getSerializableExtra("user");
+        /*this.user = (Usuario) getIntent().getSerializableExtra("user");
 
         TextView tNome = (TextView) findViewById(R.id.tNome);
         TextView tEmail = (TextView) findViewById(R.id.tEmail);
 
         tNome.setText(user.getNome());
-        tEmail.setText(user.getEmail());
+        tEmail.setText(user.getEmail());*/
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_usuario, menu);
+        return true;
     }
 
     public void pesquisar(View view){
