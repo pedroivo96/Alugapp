@@ -34,4 +34,17 @@ public class TelaCliente extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void listarImoveisFavoritados(View view){
+        //chmar controlador
+        /*Intent intent = new Intent(this, TelaListaMeusImoveis.class);
+        intent.putExtra("imoveis", imoveis);
+        startActivity(intent);*/
+    }
+
+    public void logout(View view){
+        Intent intent = new Intent(this, TelaLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

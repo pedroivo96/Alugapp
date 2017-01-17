@@ -1,5 +1,6 @@
 package br.ufpi.alugapp.fronteira;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,11 +41,14 @@ public class TelaDetalhesImovelCorretor extends AppCompatActivity {
     }
 
     public void verNoMapa(View v){
-
-
+        //Intent intent = new Intent(this, .class);
+        //intent.putExtra("imovel", this.imv);
+        // startActivity(intent);
     }
 
     public void alterar(View v){
-
+        Intent intent = new Intent(this, TelaAlterarImovel.class);
+        intent.putExtra("imovel", this.imv);
+        startActivity(intent);
     }
 }

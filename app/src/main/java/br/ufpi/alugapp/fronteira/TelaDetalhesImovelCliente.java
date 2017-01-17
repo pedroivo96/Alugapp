@@ -1,10 +1,10 @@
 package br.ufpi.alugapp.fronteira;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.entidades.Imovel;
 
@@ -35,14 +35,20 @@ public class TelaDetalhesImovelCliente extends AppCompatActivity {
     }
 
     public void verNoMapa(View v){
-
+        //Intent intent = new Intent(this, .class);
+        //intent.putExtra("imovel", this.imv);
+       // startActivity(intent);
     }
 
     public void solicitarVisita(View v){
-
+        Intent intent = new Intent(this, TelaSolicitarVisita.class);
+        intent.putExtra("IDImovel", this.imv.getIdImovel());
+        startActivity(intent);
     }
 
     public void perguntar(View v){
-
+        Intent intent = new Intent(this, TelaRealizarPergunta.class);
+        intent.putExtra("IDImovel", this.imv.getIdImovel());
+        startActivity(intent);
     }
 }

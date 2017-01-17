@@ -53,4 +53,20 @@
         android:text="pesquisar imóvel"
         android:onClick="pesquisar"/>
 
+    <Button
+        android:id="@+id/btnListaFavoritosr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Favoritos"
+        android:onClick="listarImoveisFavoritados"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="SAIR"
+        android:onClick="logout"/>
+
 </LinearLayout>

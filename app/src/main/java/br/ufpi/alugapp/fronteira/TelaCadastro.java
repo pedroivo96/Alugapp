@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.controle.Fachada;
-import br.ufpi.alugapp.entidades.Cliente;
-import br.ufpi.alugapp.entidades.Corretor;
 import br.ufpi.alugapp.entidades.Usuario;
 
 public class TelaCadastro extends AppCompatActivity {
@@ -21,12 +19,15 @@ public class TelaCadastro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_cadastrar);
+        setContentView(R.layout.activity_tela_cadastro);
 
         this.controles = new Fachada();
     }
 
     public void cadastrar(View view){
+
+        Intent intent;
+        Usuario user;
 
         EditText edtNome = ((EditText) findViewById(R.id.edtNome));
         EditText edtUsuario = ((EditText) findViewById(R.id.edtUsuario));
@@ -42,28 +43,34 @@ public class TelaCadastro extends AppCompatActivity {
         String telefone = edtTelefone.getText().toString();
         long idTipoEscolhido = rgTipo.getCheckedRadioButtonId();
 
-        Intent intent;
-        Usuario user;
-        if(idTipoEscolhido == R.id.rbCliente){
-            user = controles.controladorUsuarios.cadastrarCliente(nome, usuario, senha, email, telefone);
-            if(user != null) {
-                Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
-                intent  = new Intent(this, TelaCliente.class);
-                intent.putExtra("user", user);
-                startActivity(intent);
+        if(nome != "" && usuario != "" && senha != "" && email != "" && telefone != ""){
+
+            if(idTipoEscolhido == R.id.rbCliente){
+
+                user = controles.controladorUsuarios.cadastrarCliente(nome, usuario, senha, email, telefone);
+                if(user != null) {
+                    Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
+                    intent  = new Intent(this, TelaCliente.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+                }
             }else{
-                Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+
+                user = controles.controladorUsuarios.cadastrarCorretor(nome, usuario, senha, email, telefone);
+                if(user != null) {
+                    Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
+                    intent  = new Intent(this, TelaCorretor.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+                }
             }
+
         }else{
-            user = controles.controladorUsuarios.cadastrarCorretor(nome, usuario, senha, email, telefone);
-            if(user != null) {
-                Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
-                intent  = new Intent(this, TelaCorretor.class);
-                intent.putExtra("user", user);
-                startActivity(intent);
-            }else{
-                Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
-            }
+            Toast.makeText(this, "Entrada Inválida!", Toast.LENGTH_LONG).show();
         }
     }
 }

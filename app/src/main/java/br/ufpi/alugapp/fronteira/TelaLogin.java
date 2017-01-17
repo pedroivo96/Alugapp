@@ -27,31 +27,36 @@ public class TelaLogin extends AppCompatActivity {
 
     public void login(View view){
 
+        Intent intent;
+
         EditText edtUsuario = ((EditText) findViewById(R.id.edtUsuario));
         EditText edtSenha = ((EditText) findViewById(R.id.edtSenha));
 
         String usuario = edtUsuario.getText().toString();
         String senha = edtSenha.getText().toString();
 
-        Usuario user = controles.controladorUsuarios.login(usuario, senha);
+        if(usuario != "" && senha != ""){
 
-        if(user != null && (usuario != "" && senha != "")){
+            Usuario user = controles.controladorUsuarios.login(usuario, senha);
 
-            Intent intent;
+            if(user != null){
 
-            if(user instanceof Cliente){
-                intent  = new Intent(this, TelaCliente.class);
-            }else if(user instanceof Corretor){
-                intent = new Intent(this, TelaCorretor.class);
+                if(user instanceof Cliente){
+                    intent  = new Intent(this, TelaCliente.class);
+                }else if(user instanceof Corretor){
+                    intent = new Intent(this, TelaCorretor.class);
+                }else{
+                    intent  = new Intent(this, TelaDonoImobiliaria.class);
+                }
+
+                intent.putExtra("user", user);
+                startActivity(intent);
             }else{
-                intent  = new Intent(this, TelaDonoImobiliaria.class);
+                Toast.makeText(this, "Usuário ou senha inválido!", Toast.LENGTH_LONG).show();
             }
 
-            intent.putExtra("user", user);
-            startActivity(intent);
-
         }else{
-            Toast.makeText(this, "Usuário ou senha inválido!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Entrada inválida!", Toast.LENGTH_LONG).show();
         }
     }
 
