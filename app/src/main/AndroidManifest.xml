@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.ufpi.alugapp">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -8,6 +13,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyABYu7q68LsKanbnqTGrmu1eJCZZPjxKdU" />
         <activity
             android:name=".fronteira.TelaLogin"
             android:label="Login">
@@ -68,6 +76,9 @@
         <activity
             android:name=".fronteira.TelaImoveisFavoritos"
             android:label="Favoritos" />
+        <activity
+            android:name=".fronteira.TelaMapa"
+            android:label="Mapa" />
         <activity android:name=".fronteira.TelaAlterarImovel"
             android:label="Alterar dados imóvel"/>
     </application>
