@@ -6,7 +6,7 @@ import android.os.Bundle;
 import br.ufpi.alugapp.R;
 
 public class TelaMapa extends AppCompatActivity {
-
+//teste
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
