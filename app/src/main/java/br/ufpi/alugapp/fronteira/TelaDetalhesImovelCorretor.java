@@ -41,9 +41,11 @@ public class TelaDetalhesImovelCorretor extends AppCompatActivity {
     }
 
     public void verNoMapa(View v){
-        //Intent intent = new Intent(this, .class);
-        //intent.putExtra("imovel", this.imv);
-        // startActivity(intent);
+        Intent intent = new Intent(this, TelaMapa.class);
+        intent.putExtra("comando", 2);
+        intent.putExtra("latitude", this.imv.getLocal().latitude);
+        intent.putExtra("longitude", this.imv.getLocal().longitude);
+        startActivity(intent);
     }
 
     public void alterar(View v){

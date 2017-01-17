@@ -23,8 +23,6 @@ public class TelaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_tela_login);
 
         this.controles = new Fachada();
-        Intent intent = new Intent(this, TelaMapa.class);
-        startActivity(intent);
     }
 
     public void login(View view){
@@ -63,7 +61,7 @@ public class TelaLogin extends AppCompatActivity {
     }
 
     public void cadastrar(View view){
-        Intent intent = new Intent(this, TelaCadastro.class);
+        Intent intent = new Intent(this, TelaMapa.class);
         startActivity(intent);
     }
 }

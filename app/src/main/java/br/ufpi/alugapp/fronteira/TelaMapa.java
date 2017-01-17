@@ -1,12 +1,15 @@
 package br.ufpi.alugapp.fronteira;
 
 import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,11 +27,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 
 import br.ufpi.alugapp.R;
+import br.ufpi.alugapp.controle.Fachada;
+import br.ufpi.alugapp.entidades.Imovel;
 
 public class TelaMapa extends AppCompatActivity implements
         OnMapReadyCallback,
@@ -42,6 +48,8 @@ public class TelaMapa extends AppCompatActivity implements
     private double longitude;
     private double latitude;
     private GoogleApiClient googleApiClient;
+    static int comando;
+    String endereco = "";
 
     //  private  LatLng latLng;
     @Override
@@ -54,7 +62,26 @@ public class TelaMapa extends AppCompatActivity implements
         mapFragment.getMapAsync(this);
         callConnetion();
 
+        this.comando = getIntent().getIntExtra("comando", 0);
+
+        if(comando == 1){ //inserir
+
+            Toast.makeText(this, "Selecione local do imóvel no mapa", Toast.LENGTH_SHORT).show();
+
+        }else if(comando == 2){ //ver no mapa
+
+            addPontos(getIntent().getDoubleExtra("latitude", 0), getIntent().getDoubleExtra("longitude", 0), "Imóvel");
+
+        }else if(comando == 3){ //lista no mapa
+
+            ArrayList<Imovel> lista = (ArrayList<Imovel>) getIntent().getSerializableExtra("imoveis");
+            for(Imovel i : lista){
+                addPontos(i.getLocal().latitude, i.getLocal().longitude, Float.toString(i.getPreco()));
+            }
+        }
+
     }
+
     private synchronized void callConnetion() {
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addOnConnectionFailedListener(this)
@@ -143,6 +170,7 @@ public class TelaMapa extends AppCompatActivity implements
                 }
                 strAdd = strReturnedAddress.toString();
                 Log.i("LOG", "Localizacao Atual" + strReturnedAddress.toString());
+                this.endereco = strAdd;
             } else {
                 Log.i("LOG", "Localizacao Atual - No Address returned!");
             }
@@ -153,14 +181,38 @@ public class TelaMapa extends AppCompatActivity implements
         return strAdd;
     }
     @Override
-    public void onMapClick(LatLng latLng) {
+    public void onMapClick(final LatLng latLng) {
         mMap.clear();
         getCompleteAddressString(latLng.latitude, latLng.longitude);
         addPontos(latLng.latitude,latLng.longitude, "nome");
       //  moveMap();
 
+        if(comando == 1){ //inserir
 
+            AlertDialog.Builder alerta = new AlertDialog.Builder(TelaMapa.this);
+            alerta.setTitle("Endereço selecionado");
+            alerta.setMessage(this.endereco);
+            alerta.setNegativeButton("Cancelar", null);
+            alerta.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    inserir(latLng);
+                }
+            });
+            AlertDialog dialog = alerta.create();
+            dialog.show();
+        }
     }
+
+    public void inserir(LatLng latLng){
+        Intent intent = new Intent(this, TelaInserirImovel.class);
+        intent.putExtra("latitude", latLng.latitude);
+        intent.putExtra("longitude", latLng.longitude);
+        intent.putExtra("endereco", this.endereco);
+        intent.putExtra("IDCorretor", getIntent().getIntExtra("IDCorretor", 0));
+        startActivity(intent);
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

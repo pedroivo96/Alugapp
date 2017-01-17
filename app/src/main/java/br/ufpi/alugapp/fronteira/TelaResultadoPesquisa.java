@@ -41,7 +41,10 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
     }
 
     public void verNoMapa(View v){
-
+        Intent intent = new Intent(this, TelaMapa.class);
+        intent.putExtra("comando", 3);
+        intent.putExtra("imoveis", imoveis);
+        startActivity(intent);
     }
 
 }
