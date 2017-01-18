@@ -12,6 +12,7 @@ import org.w3c.dom.Text;
 
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.controle.Fachada;
+import br.ufpi.alugapp.entidades.Imovel;
 import br.ufpi.alugapp.entidades.LocalMapa;
 
 public class TelaInserirImovel extends AppCompatActivity {
@@ -29,8 +30,6 @@ public class TelaInserirImovel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inserir_imovel);
 
-
-
         edtEndereco = (EditText) findViewById(R.id.edtEndereco);
         edtDescricao = (EditText) findViewById(R.id.edtDescricao);
         edtPreco = (EditText) findViewById(R.id.edtPreco);
@@ -39,8 +38,6 @@ public class TelaInserirImovel extends AppCompatActivity {
         i = getIntent();
 
         edtEndereco.setText(i.getStringExtra("endereco"));
-
-        tIDCorretor.setText(i.getStringExtra("IDCorretor").toString());
 
         lm = new LocalMapa(i.getDoubleExtra("latitude", -1) , i.getDoubleExtra("longitude", -1));
 
@@ -53,14 +50,12 @@ public class TelaInserirImovel extends AppCompatActivity {
             Toast.makeText(this, "Entrada Inválida", Toast.LENGTH_SHORT).show();
         }
         else{
-            if(controles.controladorImoveis.inserirImovel(edtDescricao.getText().toString(),
-                    edtEndereco.getText().toString(),
-                    lm,
-                    Float.parseFloat(edtPreco.getText().toString()),
-                    i.getIntExtra("IDCorretor", -1))){
+            Imovel imv = controles.controladorImoveis.inserirImovel(edtDescricao.getText().toString(), edtEndereco.getText().toString(), lm, Float.parseFloat(edtPreco.getText().toString()), i.getIntExtra("IDCorretor", -1));
 
-                //Redirecionar TelaDetalhes
-
+            if(imv != null){
+                Intent intent = new Intent(this, TelaDetalhesImovelCorretor.class);
+                intent.putExtra("imovel", imv);
+                startActivity(intent);
             }
             else{
                 Toast.makeText(this, "Erro. Tente Novamente", Toast.LENGTH_SHORT).show();

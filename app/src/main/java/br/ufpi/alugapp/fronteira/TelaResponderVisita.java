@@ -37,7 +37,7 @@ public class TelaResponderVisita extends AppCompatActivity {
         EditText edtResposta = (EditText) findViewById(R.id.edtResposta);
         String resposta = edtResposta.getText().toString();
 
-        if (resposta != "") {
+        if (!resposta.isEmpty()) {
             //chamar controlador
         }else{
             Toast.makeText(this, "Entrada Inválida!", Toast.LENGTH_SHORT).show();

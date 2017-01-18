@@ -35,7 +35,7 @@ public class TelaResponderPergunta extends AppCompatActivity {
 
         String resposta = edtResposta.getText().toString();
 
-        if (resposta != "") {
+        if (!resposta.isEmpty()) {
             //chamar controlador
         }else{
             Toast.makeText(this, "Entrada Inválida!", Toast.LENGTH_SHORT).show();

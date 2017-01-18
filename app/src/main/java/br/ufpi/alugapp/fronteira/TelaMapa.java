@@ -187,7 +187,7 @@ public class TelaMapa extends AppCompatActivity implements
         addPontos(latLng.latitude,latLng.longitude, "nome");
       //  moveMap();
 
-        if(comando == 1){ //inserir
+        if(true){ //inserir
 
             AlertDialog.Builder alerta = new AlertDialog.Builder(TelaMapa.this);
             alerta.setTitle("Endereço selecionado");
@@ -208,7 +208,7 @@ public class TelaMapa extends AppCompatActivity implements
         Intent intent = new Intent(this, TelaInserirImovel.class);
         intent.putExtra("latitude", latLng.latitude);
         intent.putExtra("longitude", latLng.longitude);
-        intent.putExtra("endereco", this.endereco);
+        intent.putExtra("endereco", this.endereco.trim());
         intent.putExtra("IDCorretor", getIntent().getIntExtra("IDCorretor", 0));
         startActivity(intent);
     }

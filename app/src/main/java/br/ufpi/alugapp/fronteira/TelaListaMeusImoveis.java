@@ -41,7 +41,4 @@ public class TelaListaMeusImoveis extends AppCompatActivity implements AdapterVi
         startActivity(intent);
     }
 
-    public void verNoMapa(View v){
-
-    }
 }

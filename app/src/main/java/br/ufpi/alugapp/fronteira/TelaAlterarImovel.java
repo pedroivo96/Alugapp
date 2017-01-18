@@ -39,7 +39,7 @@ public class TelaAlterarImovel extends AppCompatActivity {
         String enderecoAlterado = edtEndereco.getText().toString();
         String descricaoAlterado = edtDescricao.getText().toString();
 
-        if (valorAlterado != 0.0f && enderecoAlterado != "" && descricaoAlterado != "") {
+        if (valorAlterado != 0.0f && !enderecoAlterado.isEmpty() && !descricaoAlterado.isEmpty()) {
 
             //chamar controlador
         }else{

@@ -43,7 +43,7 @@ public class TelaCadastro extends AppCompatActivity {
         String telefone = edtTelefone.getText().toString();
         long idTipoEscolhido = rgTipo.getCheckedRadioButtonId();
 
-        if(nome != "" && usuario != "" && senha != "" && email != "" && telefone != ""){
+        if(!nome.isEmpty() && !usuario.isEmpty() && !senha.isEmpty() && !email.isEmpty() && !telefone.isEmpty()){
 
             if(idTipoEscolhido == R.id.rbCliente){
 

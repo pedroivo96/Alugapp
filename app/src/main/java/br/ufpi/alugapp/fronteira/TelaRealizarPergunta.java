@@ -31,7 +31,7 @@ public class TelaRealizarPergunta extends AppCompatActivity {
         EditText edtPergunta = (EditText) findViewById(R.id.edtPergunta);
         String pergunta = edtPergunta.toString();
 
-        if (pergunta != "") {
+        if (!pergunta.isEmpty()) {
 
             //chamar controlador
 

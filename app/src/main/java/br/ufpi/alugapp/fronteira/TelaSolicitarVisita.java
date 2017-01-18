@@ -79,5 +79,6 @@ public class TelaSolicitarVisita extends AppCompatActivity {
                 data.setMinutes(minuto);
             }
         });
+
     }
 }
