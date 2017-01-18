@@ -23,6 +23,8 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         setContentView(R.layout.activity_tela_pesquisar_imovel);
 
         this.controles = new Fachada();
+        EditText edtPreco = (EditText) findViewById(R.id.tFaixaPreco);
+        edtPreco.setText(Float.toString(0.0f));
     }
 
     public void pesquisar(View view){

@@ -1,6 +1,7 @@
 package br.ufpi.alugapp.controle;
 
 import br.ufpi.alugapp.entidades.Usuario;
+import br.ufpi.alugapp.repositorio.UsuarioRepository;
 
 /**
  * Created by wellyson on 20/12/16.
@@ -8,21 +9,32 @@ import br.ufpi.alugapp.entidades.Usuario;
 
 public class UsuarioController {
 
+    private UsuarioRepository repositorioUsuario;
+
+    public UsuarioController(){
+        this.repositorioUsuario = new UsuarioRepository();
+    }
+
     public Usuario cadastrarCliente(String nome, String usuario, String senha, String email, String telefone){
 
-        //verificar e depois inserir
-        return null;
+        if(repositorioUsuario.buscarPorUsuario(usuario) != null && repositorioUsuario.buscarPorEmail(email) != null){
+            return repositorioUsuario.cadastrarCliente(nome, usuario, senha, email, telefone);
+        }
+
+        return null; //usuario ou email cadastrado.
     }
 
     public Usuario cadastrarCorretor(String nome, String usuario, String senha, String email, String telefone){
 
-        //verificar e depois inserir
-        return null;
+        if(repositorioUsuario.buscarPorUsuario(usuario) != null && repositorioUsuario.buscarPorEmail(email) != null){
+            return repositorioUsuario.cadastrarCorretor(nome, usuario, senha, email, telefone);
+        }
+
+        return null; //usuario ou email cadastrado.
     }
 
     public Usuario login(String usuario, String senha){
 
-        //verificar e depois retornar o usuario
-        return null;
+        return repositorioUsuario.login(usuario, senha);
     }
 }

@@ -57,4 +57,18 @@ public class ImovelRepository{
         return null;
     }
 
+    public boolean subcadeiaIgual(String cadeia1 , String cadeia2){
+
+        String [] tokens1 = cadeia1.split(" ");
+        String [] tokens2 = cadeia2.split(" ");
+
+        for(String s : tokens1){
+            for(String s2 : tokens2){
+                if(s.equals(s2))
+                    return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -14,84 +14,102 @@ import br.ufpi.alugapp.entidades.Imovel;
 
 public class ImovelController {
 
-    ImovelRepository repositorioImovel;
+    private ImovelRepository repositorioImovel;
 
-    public ImovelController(){
+    public ImovelController() {
         this.repositorioImovel = new ImovelRepository();
     }
 
-    public ArrayList<Imovel> pesquisar(String endereco, String descricao, float faixaPreco){
+    public ArrayList<Imovel> pesquisar(String endereco, String descricao, float faixaPreco) {
 
-        ArrayList<Imovel> resultadoPorEndereco, resultadoPorDescricao, resultadoPorPreco, enderecoDescricao, descricaoPreco;
+        ArrayList<Imovel> resultadoPorEndereco, resultadoPorDescricao, resultadoPorPreco;
+        ArrayList<Imovel> enderecoDescricao = new ArrayList<>(), enderecoDescricaoPreco = new ArrayList<>();
+        ArrayList<Imovel> enderecoPreco = new ArrayList<>(), descricaoPreco = new ArrayList<>();
 
-        //resultadoPorEndereco =
-        //resultadoPorDescricao =
-        //resultadoPorPreco =
+        resultadoPorEndereco = this.repositorioImovel.pesquisarEndereco(endereco);
+        resultadoPorDescricao = this.repositorioImovel.pesquisarDescricao(descricao);
+        resultadoPorPreco = this.repositorioImovel.pesquisarFaixaPreco(faixaPreco);
 
-        /*if(endereco != "" && descricao != ""){
-            for(Imovel i : resultadoPorEndereco){
-                for(Imovel i2 : resultadoPorDescricao)
+        if(!endereco.isEmpty() && descricao.isEmpty() && faixaPreco == 0.0f){
+            return resultadoPorEndereco;
+        }
+        if(endereco.isEmpty() && !descricao.isEmpty() && faixaPreco == 0.0f){
+            return resultadoPorDescricao;
+        }
+
+        if(endereco.isEmpty() && descricao.isEmpty() && faixaPreco != 0.0f){
+            return resultadoPorPreco;
+        }
+
+        if (!endereco.isEmpty() && !descricao.isEmpty() && faixaPreco != 0.0f) {
+            for (Imovel i : resultadoPorEndereco) {
+                for (Imovel i2 : resultadoPorDescricao)
                     if (i.equals(i2))
                         enderecoDescricao.add(i);
             }
-        }else if(descricao != "" && faixaPreco != ""){
-            for(Imovel i : resultadoPorDescricao){
-                for(Imovel i2 : resultadoPorPreco)
+            for (Imovel i : resultadoPorPreco) {
+                for (Imovel i2 : enderecoDescricao)
                     if (i.equals(i2))
-                        descricaoPreco.add(i);
+                        enderecoDescricaoPreco.add(i);
             }
-        }else if(faixaPreco != ""){
-
-        }*/
-
+            return enderecoDescricaoPreco;
+        }else{
+            if(faixaPreco == 0.0f) {
+                for (Imovel i : resultadoPorEndereco) {
+                    for (Imovel i2 : resultadoPorDescricao)
+                        if (i.equals(i2))
+                            enderecoDescricao.add(i);
+                }
+                return enderecoDescricao;
+            }
+            if(!descricao.isEmpty()){
+                for (Imovel i : resultadoPorPreco) {
+                    for (Imovel i2 : resultadoPorEndereco)
+                        if (i.equals(i2))
+                            enderecoPreco.add(i);
+                }
+                return enderecoPreco;
+            }
+            if(!endereco.isEmpty()){
+                for (Imovel i : resultadoPorPreco) {
+                    for (Imovel i2 : resultadoPorDescricao)
+                        if (i.equals(i2))
+                            descricaoPreco.add(i);
+                }
+                return descricaoPreco;
+            }
+        }
         return null;
     }
 
-    public Imovel inserirImovel(String descricao, String endereco, LocalMapa local, float preco,int idCorretor){
+    public Imovel inserirImovel(String descricao, String endereco, LocalMapa local, float preco, int idCorretor){
 
-
-
-        return null;
+        return repositorioImovel.inserirImovel(descricao, endereco, local, preco, idCorretor);
     }
 
     public ArrayList<Imovel> listarMeusImoveis(int idCorretor){
-        ArrayList<Imovel> meusImoveis = new ArrayList<>();
 
-        return meusImoveis;
+        return repositorioImovel.listarMeusImoveis(idCorretor);
     }
 
     public ArrayList<Imovel> listarMeusFavoritos(int idCliente){
-        ArrayList<Imovel> meusFavoritos = new ArrayList<>();
 
-        return meusFavoritos;
+        return repositorioImovel.listarMeusFavoritos(idCliente);
     }
 
     public Imovel alterarImovel(String descricao , String endereco , float preco, int idImovel){
 
-        return null;
+        return repositorioImovel.alterarImovel(descricao, endereco, preco, idImovel);
     }
 
     public boolean excluirDaBusca(int idImovel){
-        return false;
+
+        return repositorioImovel.excluirDaBusca(idImovel);
     }
 
     public boolean favoritarImovel(int idImovel , int idCliente){
-        return false;
+
+        return repositorioImovel.favoritarImovel(idImovel, idCliente);
     }
-
-    public boolean subcadeiaIgual(String cadeia1 , String cadeia2){
-
-        String [] tokens1 = cadeia1.split(" ");
-        String [] tokens2 = cadeia2.split(" ");
-
-        for(String s : tokens1){
-            for(String s2 : tokens2){
-                if(s.equals(s2))
-                    return true;
-            }
-        }
-        return false;
-    }
-
 
 }
