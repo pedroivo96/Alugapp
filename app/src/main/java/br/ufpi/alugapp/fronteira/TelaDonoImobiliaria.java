@@ -26,7 +26,7 @@ public class TelaDonoImobiliaria extends AppCompatActivity {
 
         this.user = (Usuario) getIntent().getSerializableExtra("user");
 
-        controles = new Fachada();
+        controles = new Fachada(this);
 
     }
 }

@@ -40,7 +40,7 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         }else{
             ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisar(endereco, descricao, faixaPreco);
 
-            if(imoveis == null){
+            if(imoveis.isEmpty()){
                 Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();
             }else{
                 Intent intent = new Intent(this, TelaResultadoPesquisa.class);

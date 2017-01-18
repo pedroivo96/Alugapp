@@ -27,7 +27,7 @@ public class TelaSolicitarVisita extends AppCompatActivity {
     private Date data;
     private TextView tIDImovel;
     private EditText edtMensagem;
-    private CalendarView calendario
+    private CalendarView calendario;
     private Spinner spHoras;
     private Spinner spMinutos;
 

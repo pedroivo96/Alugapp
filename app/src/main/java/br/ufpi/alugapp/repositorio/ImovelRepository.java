@@ -100,7 +100,7 @@ public class ImovelRepository{
         ArrayList<Imovel> imoveis = new ArrayList<>();
 
         try {
-            Cursor c = db.query("imoveis", null, "visible = 1 and favoritado = 1 and idCliente = "+idCliente,
+            Cursor c = db.query("favoritos", null, "visible = 1 and idCliente = "+idCliente,
                     null, null, null, null);
 
             if (c.moveToFirst()) {
@@ -179,9 +179,10 @@ public class ImovelRepository{
         try {
 
             ContentValues values = new ContentValues();
-            values.put("favoritado", 1);
+            values.put("idImovel", idImovel);
+            values.put("idCliente", idCliente);
 
-            db.update("imoveis", values, "_id = "+idImovel, null);
+            long id = db.insert("favoritos", "", values);
 
             return true;
 

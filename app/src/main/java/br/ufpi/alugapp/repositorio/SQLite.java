@@ -40,6 +40,8 @@ public class SQLite  extends SQLiteOpenHelper {
         db.execSQL("create table if not exists visitas (_id integer primary key autoincrement, idImovel integer, idCliente integer," +
                 "idCorretor integer, data integer, mensagem text, resposta text);");
 
+        db.execSQL("create table if not exists favoritos (idImovel integer, idCliente integer);");
+
         Log.d(TAG, "criou a databases!");
     }
 
