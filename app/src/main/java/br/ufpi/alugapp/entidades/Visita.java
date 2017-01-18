@@ -11,13 +11,15 @@ public class Visita implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    int idVisita;
-    int idImovel;
-    int idCliente;
-    int idCorretor;
-    Date data;
-    String mensagem;
-    String resposta;
+    public int idVisita;
+    public int idImovel;
+    public int idCliente;
+    public int idCorretor;
+    public Date data;
+    public String mensagem;
+    public String resposta;
+
+    public Visita(){}
 
     public Visita(int idImovel , int idCliente , Date data , String mensagem , String resposta , int idVisita){
         this.idImovel = idImovel;

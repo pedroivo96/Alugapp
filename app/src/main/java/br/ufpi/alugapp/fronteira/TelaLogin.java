@@ -22,7 +22,7 @@ public class TelaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
 
-        this.controles = new Fachada();
+        this.controles = new Fachada(this);
     }
 
     public void login(View view){
@@ -52,7 +52,7 @@ public class TelaLogin extends AppCompatActivity {
                 intent.putExtra("user", user);
                 startActivity(intent);
             }else{
-                Toast.makeText(this, "Usuário ou senha inválido!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Usuário ou senha inválido!", Toast.LENGTH_LONG).show(); //ou ocorreu erro
             }
 
         }else{
@@ -61,7 +61,7 @@ public class TelaLogin extends AppCompatActivity {
     }
 
     public void cadastrar(View view){
-        Intent intent = new Intent(this, TelaMapa.class);
+        Intent intent = new Intent(this, TelaCadastro.class);
         startActivity(intent);
     }
 }

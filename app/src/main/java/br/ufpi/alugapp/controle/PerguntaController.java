@@ -1,5 +1,7 @@
 package br.ufpi.alugapp.controle;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 import br.ufpi.alugapp.entidades.Pergunta;
@@ -13,8 +15,8 @@ public class PerguntaController {
 
     private PerguntaRepository repositorioPergunta;
 
-    public PerguntaController(){
-        this.repositorioPergunta = new PerguntaRepository();
+    public PerguntaController(Context context){
+        this.repositorioPergunta = new PerguntaRepository(context);
     }
 
     public ArrayList<Pergunta> listarPerguntas(int idCorretor){

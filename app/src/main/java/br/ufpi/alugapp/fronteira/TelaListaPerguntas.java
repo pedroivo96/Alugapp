@@ -35,7 +35,7 @@ public class TelaListaPerguntas extends AppCompatActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int idx, long id)  {
         Pergunta p = this.perguntas.get(idx);
-        Intent intent = new Intent(this, TelaDetalhesImovelCorretor.class);
+        Intent intent = new Intent(this, TelaResponderPergunta.class);
         intent.putExtra("pergunta", p);
         startActivity(intent);
     }

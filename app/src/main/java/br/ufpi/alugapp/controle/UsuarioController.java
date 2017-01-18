@@ -1,5 +1,7 @@
 package br.ufpi.alugapp.controle;
 
+import android.content.Context;
+
 import br.ufpi.alugapp.entidades.Usuario;
 import br.ufpi.alugapp.repositorio.UsuarioRepository;
 
@@ -11,13 +13,13 @@ public class UsuarioController {
 
     private UsuarioRepository repositorioUsuario;
 
-    public UsuarioController(){
-        this.repositorioUsuario = new UsuarioRepository();
+    public UsuarioController(Context context){
+        this.repositorioUsuario = new UsuarioRepository(context);
     }
 
     public Usuario cadastrarCliente(String nome, String usuario, String senha, String email, String telefone){
 
-        if(repositorioUsuario.buscarPorUsuario(usuario) != null && repositorioUsuario.buscarPorEmail(email) != null){
+        if(repositorioUsuario.buscarPorUsuario(usuario) == null && repositorioUsuario.buscarPorEmail(email) == null){
             return repositorioUsuario.cadastrarCliente(nome, usuario, senha, email, telefone);
         }
 
@@ -26,7 +28,7 @@ public class UsuarioController {
 
     public Usuario cadastrarCorretor(String nome, String usuario, String senha, String email, String telefone){
 
-        if(repositorioUsuario.buscarPorUsuario(usuario) != null && repositorioUsuario.buscarPorEmail(email) != null){
+        if(repositorioUsuario.buscarPorUsuario(usuario) == null && repositorioUsuario.buscarPorEmail(email) == null){
             return repositorioUsuario.cadastrarCorretor(nome, usuario, senha, email, telefone);
         }
 

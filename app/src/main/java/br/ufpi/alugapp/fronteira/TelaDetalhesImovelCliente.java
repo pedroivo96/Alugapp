@@ -11,6 +11,7 @@ import br.ufpi.alugapp.entidades.Imovel;
 public class TelaDetalhesImovelCliente extends AppCompatActivity {
 
     private Imovel imv;
+    private int idCliente;
     private TextView tValor;
     private TextView tEndereco;
     private TextView tDescricao;
@@ -27,6 +28,7 @@ public class TelaDetalhesImovelCliente extends AppCompatActivity {
         tIDCorretor = (TextView) findViewById(R.id.tIDCorretor);
 
         this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
+        this.idCliente = getIntent().getIntExtra("idCliente", 0);
 
         tValor.setText(Float.toString(imv.getPreco()));
         tEndereco.setText(imv.getEndereco());
@@ -50,7 +52,8 @@ public class TelaDetalhesImovelCliente extends AppCompatActivity {
 
     public void perguntar(View v){
         Intent intent = new Intent(this, TelaRealizarPergunta.class);
-        intent.putExtra("IDImovel", this.imv.getIdImovel());
+        intent.putExtra("imovel", this.imv);
+        intent.putExtra("IDCliente", this.idCliente);
         startActivity(intent);
     }
 }

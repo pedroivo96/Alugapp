@@ -187,7 +187,7 @@ public class TelaMapa extends AppCompatActivity implements
         addPontos(latLng.latitude,latLng.longitude, "nome");
       //  moveMap();
 
-        if(true){ //inserir
+        if(comando == 1){ //inserir
 
             AlertDialog.Builder alerta = new AlertDialog.Builder(TelaMapa.this);
             alerta.setTitle("Endereço selecionado");

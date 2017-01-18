@@ -9,10 +9,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.ufpi.alugapp.R;
+import br.ufpi.alugapp.controle.Fachada;
 import br.ufpi.alugapp.entidades.Visita;
 
 public class TelaResponderVisita extends AppCompatActivity {
 
+    Fachada controles;
     TextView tIDImovel, tData, tMensagem;
     Visita v;
 
@@ -20,6 +22,8 @@ public class TelaResponderVisita extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_responder_visita);
+
+        this.controles = new Fachada(this);
 
         this.v = (Visita) getIntent().getSerializableExtra("visita");
 
@@ -38,7 +42,12 @@ public class TelaResponderVisita extends AppCompatActivity {
         String resposta = edtResposta.getText().toString();
 
         if (!resposta.isEmpty()) {
-            //chamar controlador
+            if(controles.controladorVisitas.responderSolicitacaoVisita(this.v.getIdVisita(), resposta)){
+                Toast.makeText(this, "Reposta cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+                finish();
+            }else{
+                Toast.makeText(this, "Erro. Tente novamente!", Toast.LENGTH_SHORT).show();
+            }
         }else{
             Toast.makeText(this, "Entrada Inválida!", Toast.LENGTH_SHORT).show();
         }

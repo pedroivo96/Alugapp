@@ -1,5 +1,7 @@
 package br.ufpi.alugapp.controle;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,8 +16,8 @@ public class VisitaController {
 
     private VisitaRepository repositorioVisita;
 
-    public VisitaController(){
-        this.repositorioVisita = new VisitaRepository();
+    public VisitaController(Context context){
+        this.repositorioVisita = new VisitaRepository(context);
     }
 
     public ArrayList<Visita> listarVisitas(int idCorretor){

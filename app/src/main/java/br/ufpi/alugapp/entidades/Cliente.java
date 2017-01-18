@@ -10,6 +10,8 @@ public class Cliente extends Usuario{
 
     public ArrayList<Imovel> imoveisFavoritos;
 
+    public Cliente(){}
+
     public Cliente(String nome, String usuario, String senha, String email, String telefone, int idUser){
         super(nome, usuario, senha, email, telefone, idUser);
         this.imoveisFavoritos = new ArrayList<>();

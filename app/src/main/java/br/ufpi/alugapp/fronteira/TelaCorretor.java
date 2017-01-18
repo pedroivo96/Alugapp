@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import br.ufpi.alugapp.R;
 import br.ufpi.alugapp.controle.Fachada;
 import br.ufpi.alugapp.entidades.Imovel;
+import br.ufpi.alugapp.entidades.Pergunta;
 import br.ufpi.alugapp.entidades.Usuario;
 import br.ufpi.alugapp.entidades.Visita;
 
@@ -27,7 +28,7 @@ public class TelaCorretor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_corretor);
 
-        this.controles = new Fachada();
+        this.controles = new Fachada(this);
         this.user = (Usuario) getIntent().getSerializableExtra("user");
 
         TextView tNome = (TextView) findViewById(R.id.tNome);
@@ -46,45 +47,54 @@ public class TelaCorretor extends AppCompatActivity {
 
     public void listarMeusImoveis(View view){
 
-        //chamar controlador
-        //ArrayList<Imovel> imoveis =
+        ArrayList<Imovel> imoveis = controles.controladorImoveis.listarMeusFavoritos(this.user.getIdUser());
 
-        /*if(imoveis != null){
-            Intent intent = new Intent(this, TelaListaMeusImoveis.class);
-            intent.putExtra("imoveis", imoveis);
-            startActivity(intent);
+        if(imoveis != null){
+            if(!imoveis.isEmpty()){
+                Intent intent = new Intent(this, TelaListaMeusImoveis.class);
+                intent.putExtra("imoveis", imoveis);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();
+            }
         }else{
-            Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();
-        }*/
+            Toast.makeText(this, "Erro. Tente novamente!", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
     public void listarVisitas(View view){
 
-        //chamar controlador
-        //ArrayList<Visita> visitas =
+        ArrayList<Visita> visitas = controles.controladorVisitas.listarVisitas(this.user.getIdUser());
 
-        /*if(visitas != null) {
-            Intent intent = new Intent(this, TelaListaVisitas.class);
-            intent.putExtra("visitas", visitas);
-            startActivity(intent);
+        if(visitas != null){
+            if(!visitas.isEmpty()) {
+                Intent intent = new Intent(this, TelaListaVisitas.class);
+                intent.putExtra("visitas", visitas);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Nenhuma visita encontrada!", Toast.LENGTH_SHORT).show();
+            }
         }else{
-            Toast.makeText(this, "Nenhuma visita encontrada!", Toast.LENGTH_SHORT).show();
-        }*/
+            Toast.makeText(this, "Erro. Tente novamente!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void listarPerguntas(View view){
 
-        //chamar controlador
-        //ArrayList<Pergunta> perguntas =
+        ArrayList<Pergunta> perguntas = controles.controladorPerguntas.listarPerguntas(this.user.getIdUser());
 
-        /*if(perguntas != null) {
-            Intent intent = new Intent(this, TelaListaPerguntas.class);
-            intent.putExtra("perguntas", perguntas);
-            startActivity(intent);
+        if(perguntas != null){
+            if(!perguntas.isEmpty()) {
+                Intent intent = new Intent(this, TelaListaPerguntas.class);
+                intent.putExtra("perguntas", perguntas);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Nenhuma pergunta encontrada!", Toast.LENGTH_SHORT).show();
+            }
         }else{
-            Toast.makeText(this, "Nenhuma pergunta encontrada!", Toast.LENGTH_SHORT).show();
-        }*/
+            Toast.makeText(this, "Erro. Tente novamente!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void pesquisar(View view){

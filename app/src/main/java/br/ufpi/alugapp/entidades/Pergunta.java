@@ -15,17 +15,18 @@ public class Pergunta implements Serializable {
     public int idImovel;
     public int idCliente;
     public int idCorretor;
-    public Date data;
     public String pergunta;
     public String resposta;
 
-    public Pergunta(int idPergunta , int idImovel, int idCliente , Date data , String pergunta , String resposta){
+    public Pergunta(){}
+
+    public Pergunta(int idPergunta , int idImovel, int idCliente , int idCorretor, String pergunta , String resposta){
         this.idPergunta = idPergunta;
         this.idImovel = idImovel;
         this.idCliente = idCliente;
-        this.data = data;
         this.pergunta = pergunta;
         this.resposta = resposta;
+        this.idCorretor = idCorretor;
     }
 
     public int getIdCorretor() {
@@ -54,14 +55,6 @@ public class Pergunta implements Serializable {
 
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public String getPergunta() {

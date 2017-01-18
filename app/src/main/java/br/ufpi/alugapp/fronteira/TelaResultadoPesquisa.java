@@ -37,6 +37,7 @@ public class TelaResultadoPesquisa extends AppCompatActivity implements AdapterV
         Imovel imv = this.imoveis.get(idx);
         Intent intent = new Intent(this, TelaDetalhesImovelCliente.class);
         intent.putExtra("imovel", imv);
+        intent.putExtra("idCliente", getIntent().getIntExtra("idCliente", 0));
         startActivity(intent);
     }
 

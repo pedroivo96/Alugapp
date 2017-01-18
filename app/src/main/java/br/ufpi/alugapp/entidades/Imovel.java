@@ -19,6 +19,8 @@ public class Imovel implements Serializable{
     public LocalMapa local;
     public float preco;
 
+    public Imovel(){}
+
     public Imovel(String descricao, String endereco, LocalMapa local, float preco, int idCorretor, int idImovel){
         this.idImovel = idImovel;
         this.descricao = descricao;

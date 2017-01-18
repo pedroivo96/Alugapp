@@ -1,5 +1,6 @@
 package br.ufpi.alugapp.fronteira;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ public class TelaAlterarImovel extends AppCompatActivity {
 
         this.imv = (Imovel) getIntent().getSerializableExtra("imovel");
 
-        this.controladores = new Fachada();
+        this.controladores = new Fachada(this);
         this.edtValor = (EditText) findViewById(R.id.edtValor);
         this.edtEndereco = (EditText) findViewById(R.id.edtEndereco);
         this.edtDescricao = (EditText) findViewById(R.id.edtDescricao);
@@ -41,7 +42,15 @@ public class TelaAlterarImovel extends AppCompatActivity {
 
         if (valorAlterado != 0.0f && !enderecoAlterado.isEmpty() && !descricaoAlterado.isEmpty()) {
 
-            //chamar controlador
+            Imovel imv2 = controladores.controladorImoveis.alterarImovel(descricaoAlterado, enderecoAlterado, valorAlterado, imv.getIdImovel());
+
+            if(imv2 != null){
+                Intent intent = new Intent(this, TelaDetalhesImovelCorretor.class);
+                intent.putExtra("imovel", imv2);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Erro. Tente novamente!", Toast.LENGTH_SHORT).show();
+            }
         }else{
             Toast.makeText(this, "Entrada Inválida!", Toast.LENGTH_SHORT).show();
         }

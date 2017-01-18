@@ -22,7 +22,7 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_pesquisar_imovel);
 
-        this.controles = new Fachada();
+        this.controles = new Fachada(this);
         EditText edtPreco = (EditText) findViewById(R.id.tFaixaPreco);
         edtPreco.setText(Float.toString(0.0f));
     }
@@ -35,14 +35,19 @@ public class TelaPesquisarImovel extends AppCompatActivity {
         EditText tFaixaPreco = (EditText) findViewById(R.id.tFaixaPreco);
         float faixaPreco = Float.parseFloat(tFaixaPreco.getText().toString());
 
-        ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisar(endereco, descricao, faixaPreco);
-
-        if(imoveis == null){
-            Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();
+        if(endereco.isEmpty() && descricao.isEmpty() && faixaPreco == 0.0f){
+            Toast.makeText(this, "Entrada inválida!", Toast.LENGTH_SHORT).show();
         }else{
-            Intent intent = new Intent(this, TelaResultadoPesquisa.class);
-            intent.putExtra("imoveis", imoveis);
-            startActivity(intent);
+            ArrayList<Imovel> imoveis = controles.controladorImoveis.pesquisar(endereco, descricao, faixaPreco);
+
+            if(imoveis == null){
+                Toast.makeText(this, "Nenhum imóvel encontrado!", Toast.LENGTH_SHORT).show();
+            }else{
+                Intent intent = new Intent(this, TelaResultadoPesquisa.class);
+                intent.putExtra("imoveis", imoveis);
+                intent.putExtra("idCliente", getIntent().getIntExtra("idCliente", 0));
+                startActivity(intent);
+            }
         }
     }
 }

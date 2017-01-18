@@ -10,6 +10,8 @@ public class Corretor extends Usuario{
 
     public ArrayList<Imovel> meusImoveis;
 
+    public Corretor(){}
+
     public Corretor(String nome, String usuario, String senha, String email, String telefone, int idUser){
 
         super(nome, usuario, senha, email, telefone, idUser);

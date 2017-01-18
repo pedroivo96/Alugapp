@@ -21,7 +21,7 @@ public class TelaCadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_cadastro);
 
-        this.controles = new Fachada();
+        this.controles = new Fachada(this);
     }
 
     public void cadastrar(View view){
@@ -54,7 +54,7 @@ public class TelaCadastro extends AppCompatActivity {
                     intent.putExtra("user", user);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show(); //ou ocorreu erro
                 }
             }else{
 
@@ -65,7 +65,7 @@ public class TelaCadastro extends AppCompatActivity {
                     intent.putExtra("user", user);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Usuário Inválido!", Toast.LENGTH_LONG).show(); //ou ocorreu erro
                 }
             }
 

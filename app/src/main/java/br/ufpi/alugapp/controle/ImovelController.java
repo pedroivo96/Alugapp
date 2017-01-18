@@ -1,5 +1,7 @@
 package br.ufpi.alugapp.controle;
 
+import android.content.Context;
+
 import br.ufpi.alugapp.entidades.LocalMapa;
 import br.ufpi.alugapp.repositorio.ImovelRepository;
 
@@ -16,8 +18,8 @@ public class ImovelController {
 
     private ImovelRepository repositorioImovel;
 
-    public ImovelController() {
-        this.repositorioImovel = new ImovelRepository();
+    public ImovelController(Context context) {
+        this.repositorioImovel = new ImovelRepository(context);
     }
 
     public ArrayList<Imovel> pesquisar(String endereco, String descricao, float faixaPreco) {
