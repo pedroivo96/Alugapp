@@ -68,9 +68,18 @@ public class TelaMapa extends AppCompatActivity implements
 
             Toast.makeText(this, "Selecione local do imóvel no mapa", Toast.LENGTH_SHORT).show();
 
-        }else if(comando == 2){ //ver no mapa
+        }else if(comando ==  2){ //ver no mapa
 
-            addPontos(getIntent().getDoubleExtra("latitude", 0), getIntent().getDoubleExtra("longitude", 0), "Imóvel");
+           // double latitude = getIntent().getDoubleExtra("latitude", this.latitude);
+            //double longitude = getIntent().getDoubleExtra("longitude", this.longitude);
+
+             latitude = getIntent().getDoubleExtra("latitude", this.latitude);
+             longitude = getIntent().getDoubleExtra("longitude", this.longitude);
+
+
+            Log.i("log teeeeete"," "+latitude);
+
+       //     addPontos(latitude, longitude, "Imóvel");
 
         }else if(comando == 3){ //lista no mapa
 
@@ -81,6 +90,8 @@ public class TelaMapa extends AppCompatActivity implements
         }
 
     }
+
+
 
     private synchronized void callConnetion() {
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -135,8 +146,15 @@ public class TelaMapa extends AppCompatActivity implements
         Location location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
         if (location != null) {
             //Getting longitude and latitude
-            longitude = location.getLongitude();
-            latitude = location.getLatitude();
+            if(comando ==2){
+
+                latitude = getIntent().getDoubleExtra("latitude", this.latitude);
+                longitude = getIntent().getDoubleExtra("longitude", this.longitude);
+            }else{
+                longitude = location.getLongitude();
+                latitude = location.getLatitude();
+            }
+
             //moving the map to location
             moveMap();
             // addPontos();

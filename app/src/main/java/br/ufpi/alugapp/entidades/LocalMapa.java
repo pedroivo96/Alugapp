@@ -1,10 +1,14 @@
 package br.ufpi.alugapp.entidades;
 
+import java.io.Serializable;
+
 /**
  * Created by wellyson on 05/12/16.
  */
 
-public class LocalMapa {
+public class LocalMapa implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     public double latitude;
     public double longitude;

@@ -30,6 +30,8 @@ public class TelaInserirImovel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inserir_imovel);
 
+        this.controles = new Fachada(this);
+
         edtEndereco = (EditText) findViewById(R.id.edtEndereco);
         edtDescricao = (EditText) findViewById(R.id.edtDescricao);
         edtPreco = (EditText) findViewById(R.id.edtPreco);

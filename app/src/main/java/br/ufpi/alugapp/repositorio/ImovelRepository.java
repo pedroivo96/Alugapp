@@ -100,7 +100,7 @@ public class ImovelRepository{
         ArrayList<Imovel> imoveis = new ArrayList<>();
 
         try {
-            Cursor c = db.query("favoritos", null, "visible = 1 and idCliente = "+idCliente,
+            Cursor c = db.query("favoritos", null, "idCliente = "+idCliente,
                     null, null, null, null);
 
             if (c.moveToFirst()) {
